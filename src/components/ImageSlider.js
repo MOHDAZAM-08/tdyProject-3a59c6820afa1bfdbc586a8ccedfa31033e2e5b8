@@ -22,8 +22,9 @@ function ImageSlider() {
   ];
 
   return (
-    <div>
-        <div style={{textAlign:"center",fontSize:"3rem", padding:"40px 10px 40px 10px"}}>GALLARY</div>
+    <div className='slider'>
+       
+      <div style={{textAlign:"center",fontSize:"3rem", padding:"40px 10px 40px 10px",color:"white"}}>GALLARY</div>
       <div className="ImageSlider">
         {panels.map((panel, index) => (
           <div

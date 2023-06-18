@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import '../App.css';
+import navlogo from "../img/logo.png"
+import {
+  Link
+} from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,28 +13,34 @@ function Navbar() {
   };
 
   return (
+    <div className="navbar">
+      
     <div className={`container ${isOpen ? 'open' : ''}`}>
+    <div className='Navlogo'>
+        <img src={navlogo} alt="" style={{width:"100%"}} />
+      </div>
       <button className={`menu-btn ${isOpen ? 'open' : ''}`} onClick={toggleMenu} />
       <div className={`backdrop ${isOpen ? 'open' : ''}`} />
       <div className={`menu ${isOpen ? 'open' : ''}`}>
         <nav>
-          <a href="#" className="link">
+          <Link to="/" className="link">
             Home
-          </a>
-          <a href="#" className="link">
+          </Link>
+          <Link href="#" className="link">
             About
-          </a>
-          <a href="#" className="link">
+          </Link>
+          <Link href="#" className="link">
             Services
-          </a>
-          <a href="#" className="link">
+          </Link>
+          <Link to="/ProjectPage" className="link">
             Projects
-          </a>
-          <a href="#" className="link">
+          </Link>
+          <Link href="#" className="link">
             Contact Us
-          </a>
+          </Link>
         </nav>
       </div>
+    </div>
     </div>
   );
 }
